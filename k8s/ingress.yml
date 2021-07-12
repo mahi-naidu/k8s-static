@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: static-ingress
+ namespace: static
+spec:
+ rules:
+ - host: static.kkmn.info
+   http:
+     paths:
+     - path:
+       backend:
+         serviceName: static-svc
+         servicePort: 80
